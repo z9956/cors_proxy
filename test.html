@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text">
+    <button>fetch</button>
+    <button class="getMusic">get mp3</button>
+</div>
+
+<script>
+    const fetchButton = document.querySelector('button');
+    const inputEle = document.querySelector('input');
+
+    fetchButton.onclick = function () {
+        fetch(`http://localhost:4000/api/${inputEle.value}`)
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+</script>
+</body>
+</html>
